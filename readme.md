@@ -1,4 +1,4 @@
-#Dödödöpbot
+# Dödödöpbot
 A discord bot that plays dödödöp whenever a user joins a voice channel. But has certain other features.
 
 ## Setup
