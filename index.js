@@ -5,7 +5,6 @@ const https = require("https");
 const fs = require("fs");
 
 //Loading commands
-bot.commandPrefix = ".";
 bot.commands = new Discord.Collection();
 fs.readdir("./cmds/", (err, files) => {
 	if(err) console.error(err);
@@ -55,7 +54,7 @@ bot.on("message", async msg => {
 	const command = messageArray[0].slice(bot.commandPrefix.length);
 	const args = messageArray.slice(1);
 
-	if(!msg.content.startsWith(bot.commandPrefix)) return;
+	//if(!msg.content.startsWith(bot.commandPrefix)) return;
 	cmd = bot.commands.get(command);
 	if(cmd) cmd.run(bot, msg, args);	
 });

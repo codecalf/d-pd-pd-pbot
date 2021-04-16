@@ -3,5 +3,5 @@ module.exports.run = (bot, msg, args) => {
 }
 
 module.exports.info = {
-	name: "skribbl"
+	name: ".skribbl"
 }
