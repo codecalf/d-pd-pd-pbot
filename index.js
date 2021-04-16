@@ -20,9 +20,9 @@ fs.readdir("./cmds/", (err, files) => {
 	});
 });
 
-async function playSound(channel) {
+async function playSound(channel, file_path) {
 	const connection = await channel.join()
-	const dispatcher = connection.play("./doep.oga");
+	const dispatcher = connection.play(file_path);
 }
 
 bot.on("ready", async () => {
@@ -66,12 +66,13 @@ bot.on("voiceStateUpdate", (oldMemberState, newMemberState) => {
 
 	if (!oldMemberChannel) {
 		//User joins Channel
-		playSound(newMemberChannel);
+		playSound(newMemberChannel, "./doep.oga");
 	} else if (!newMemberChannel) {
 		//User leaves Channel
+		playSound(oldMemberChannel, "./egal.mp3");
 	} else if(newMemberChannel.id != oldMemberChannel.id) {
 		//User changes Channel
-		playSound(newMemberChannel);
+		playSound(newMemberChannel, "./doep.oga");
 	}
 });
 bot.login(config.token);
