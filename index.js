@@ -51,7 +51,7 @@ bot.on("message", async msg => {
 	}
 
 	const messageArray = msg.content.split(" ");
-	const command = messageArray[0].slice(bot.commandPrefix.length);
+	const command = messageArray[0];
 	const args = messageArray.slice(1);
 
 	//if(!msg.content.startsWith(bot.commandPrefix)) return;
