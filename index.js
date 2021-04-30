@@ -60,6 +60,7 @@ bot.on("message", async msg => {
 });
 
 bot.on("voiceStateUpdate", (oldMemberState, newMemberState) => {
+	if(oldMemberState.member.user == bot.user.id) return;
 	const oldMemberChannel = oldMemberState.channel;
 	const newMemberChannel = newMemberState.channel;
 

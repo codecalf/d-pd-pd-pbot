@@ -1,7 +1,6 @@
 const fs = require("fs");
 module.exports.run = async (bot, msg, args) => {
 	const voice = msg.member.voice;
-	if(!voice) return;
 	
 	const path = "./audiofiles/hae/";
 	let pathsToAudio = [];
@@ -12,8 +11,8 @@ module.exports.run = async (bot, msg, args) => {
 		const audioIndex = Math.floor(Math.random() * pathsToAudio.length);
 		const pathToAudio = pathsToAudio[audioIndex];
 
-		const connection = await voice.channel.join();
-		const dispatcher = connection.play(pathToAudio);
+		const connection = await voice.channel?.join();
+		const dispatcher = connection?.play(pathToAudio);
 	});
 
 
